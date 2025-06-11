@@ -38,5 +38,76 @@ The pipeline is meant to process the EEG Eye State Dataset from UCI Machine Lear
 - Labels: Binarized into 0 and 1 (0 = eyes open, 1 = eyes closed).
 - Size: Approximately 15,000 samples.
 
+## Feature Extraction
+Two feature extraction approaches were tested:
+- Statistical evaluation of all possibly relevant features (19 features per channel × 14 channels = 266 features, notably
+    'delta': power_in_delta_band,
+    'theta': power_in_theta_band, 
+    'alpha': power_in_alpha_band,
+    'beta': power_in_beta_band,
+    'gamma': power_in_gamma_band,
+    'rel_delta': relative_delta_power,
+    'rel_theta': relative_theta_power,
+    'rel_alpha': relative_alpha_power,
+    'rel_beta': relative_beta_power,
+    'rel_gamma': relative_gamma_power,
+    'alpha_beta_ratio': alpha/beta,
+    'theta_beta_ratio': theta/beta,
+    'alpha_theta_ratio': alpha/theta,
+    'mean': mean_amplitude,
+    'std': standard_deviation,
+    'skew': skewness,
+    'kurtosis': kurtosis,
+    'mobility': hjorth_mobility,
+    'complexity': hjorth_complexity)
+  Feture selection methods used were:
+  - **Feature Selection Methods**
+  - ANOVA F-value
+  - Mutual Information
+  - Random Forest Importance
 
+Selection through cross-validation
+- Region-specific feature extraction:
+  - extract per-channel key features (8 per channel):
+    'alpha_power', 'beta_power', 'alpha_beta_ratio', 'rel_alpha', 'rel_beta',
+    'mean', 'std', 'rms',
+  - also extract regional features (9 total):
+    'posterior_alpha_power',        
+    'frontal_beta_power',          
+    'global_alpha_beta_ratio',      
+    'post_front_alpha_ratio',
+    'front_post_beta_ratio',
+  The first method was proven to be more computationally expensive while introducing no relevant improvements to the classification accuracy
 
+The new sound approach and feature selection pipeline was found to be as follows:
+- Extract 57 focused features (all based on domain knowledge -focus on occipital and frontal regions as they are more informative in eye state change detection)
+- No statistical selection (every feature has a purpose)
+- Train on all 57 features (all are relevant)
+
+## Implemented Classification Algorithms
+- **Logistic Regression**
+  - Functionality: Linear baseline classifier
+  - Strengths: Quick, straightforward, interpretable, and gives probabilistic outcomes
+  - Hyperparameters: L2 regularization, max_iter=1000
+
+- **Random Forest**
+  - Functionality: Ensemble technique alongside importance of features
+  - Strengths: Non-linearity, gives important feature ranking
+  - Hyperparameters: 100 estimators, bootstrapped sampling
+
+- **Gradient Boosting**
+  - Functionality: Ensemble learning in sequence
+  - Strengths: Accurate, good for complicated patterns
+  - Hyperparameters: 100 estimators, optimized learning rate
+
+- **Support Vector Machine**
+- Functionality: Classification with maximum margin
+- Strengths: Good performance in higher dimensions; utilizes the kernel trick
+- Hyperparameters: RBF kernel with probability estimates on
+
+- **Neural Network (MLP)**
+  - Functionality: Deep learning technique
+  - Strengths: Can approximate functions universally; identifies non-linear patterns
+  - Hyperparameters: Hidden layers (100, 50), uses Adam optimizer
+
+Results are reported in the results.

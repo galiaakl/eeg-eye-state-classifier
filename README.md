@@ -110,4 +110,11 @@ The new sound approach and feature selection pipeline was found to be as follows
   - Strengths: Can approximate functions universally; identifies non-linear patterns
   - Hyperparameters: Hidden layers (100, 50), uses Adam optimizer
 
-Results are reported in the results.
+Results are reported in results/reports/classification-summary.txt
+The test files will be preserved for later improvements. This repository is intended for sharing the optimized pipeline designed after rigirous tests and parameter evaluation.
+
+## Acknowledgments
+- UCI Machine Learning Repository for the EEG Eye State dataset
+- scikit-learn developers for machine learning tools
+- SciPy community for signal processing functions
+- matplotlib team for visualization capabilities

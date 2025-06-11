@@ -105,9 +105,9 @@ The new sound approach and feature selection pipeline was found to be as follows
   - Hyperparameters: 100 estimators, optimized learning rate
 
 - **Support Vector Machine**
-- Functionality: Classification with maximum margin
-- Strengths: Good performance in higher dimensions; utilizes the kernel trick
-- Hyperparameters: RBF kernel with probability estimates on
+  - Functionality: Classification with maximum margin
+  - Strengths: Good performance in higher dimensions; utilizes the kernel trick
+  - Hyperparameters: RBF kernel with probability estimates on
 
 - **Neural Network (MLP)**
   - Functionality: Deep learning technique

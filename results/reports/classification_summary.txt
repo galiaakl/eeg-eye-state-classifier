@@ -1,0 +1,21 @@
+============================================================
+EEG EYE STATE CLASSIFICATION SUMMARY
+============================================================
+
+Best Classifier: Gradient Boosting
+  Test Accuracy: 1.000
+  ROC AUC: 1.000
+  Sensitivity (Eyes Closed): 1.000
+  Specificity (Eyes Open): 1.000
+  CV Accuracy: 0.520 ± 0.160
+
+All Classifiers Performance:
+----------------------------------------
+Logistic Regression : 0.636 (AUC: 0.567)
+Random Forest       : 0.818 (AUC: 0.933)
+SVM                 : 0.636 (AUC: 0.267)
+Gradient Boosting   : 1.000 (AUC: 1.000)
+Neural Network      : 0.636 (AUC: 0.700)
+
+Classification Report (Best Classifier):
+----------------------------------------

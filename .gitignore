@@ -1,0 +1,48 @@
+﻿# Test files and debugging scripts
+test_*.py
+*test*.py
+debug_*.py
+*debug*.py
+minimal_*.py
+quick_*.py
+simple_*.py
+force_*.py
+fix_*.py
+*_fix.py
+realistic_evaluation.py
+comprehensive_diagnosis.py
+compare_ica_approaches.py
+run_interactive_preprocessing.py
+generate_all_components.py
+improved_feature_extraction.py
+pipeline_debug.py
+balanced_suggestion_logic.py
+fixed_suggestion_logic.py
+
+# Test directory
+tests/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/

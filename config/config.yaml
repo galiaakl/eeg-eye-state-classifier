@@ -1,0 +1,44 @@
+# EEG Eye State Detection Configuration
+
+data:
+  sampling_frequency: 127.95
+  expected_channels: ['FP1', 'FP2', 'AF3', 'AF4', 'F7', 'F3', 'Fz', 'F4', 'F8', 'FC5', 'FC1', 'FC2', 'FC6', 'C3', 'Cz', 'C4', 'CP5', 'CP1', 'CP2', 'CP6', 'P7', 'P3', 'Pz', 'P4', 'P8', 'PO9', 'O1', 'Oz', 'O2', 'PO10']
+  label_column: 'eyeDetection'
+
+preprocessing:
+  filters:
+    notch:
+      frequency: 50.0
+      quality_factor: 35
+    bandpass:
+      low_cut: 1.0
+      high_cut: 45.0
+      order: 6
+  
+  ica:
+    n_components: 14
+    max_iter: 2000
+    tolerance: 0.0001
+    random_state: 42
+
+features:
+  window_size: 2.0  # seconds
+  overlap: 0.5      # 50% overlap
+  bands:
+    delta: [1, 4]
+    theta: [4, 8]
+    alpha: [8, 13]
+    beta: [13, 30]
+    gamma: [30, 45]
+
+classification:
+  test_size: 0.2
+  validation_size: 0.25
+  cv_folds: 5
+  random_state: 42
+  n_selected_features: 20
+
+visualization:
+  time_window: 3.0  # seconds to show in time domain plots
+  figure_size: [20, 12]
+  dpi: 300

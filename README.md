@@ -66,7 +66,6 @@ Two feature extraction approaches were tested:
     'mobility': hjorth_mobility,
     'complexity': hjorth_complexity)
   Feture selection methods used were:
-  - **Feature Selection Methods**
   - ANOVA F-value
   - Mutual Information
   - Random Forest Importance

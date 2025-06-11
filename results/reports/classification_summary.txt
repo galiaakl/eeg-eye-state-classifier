@@ -5,6 +5,4 @@ Random Forest       : 0.818 (AUC: 0.933)
 SVM                 : 0.636 (AUC: 0.267)
 Gradient Boosting   : 1.000 (AUC: 1.000)
 Neural Network      : 0.636 (AUC: 0.700)
-
-Classification Report (Best Classifier):
 ----------------------------------------

@@ -7,7 +7,7 @@ This project focuses on the implementation of an EEG signal processing pipeline 
 - **Notch Filtering:** Gets rid of 50/60 Hz power line noise.
 - **Bandpass Filtering:** Extracts necessary EEG frequencies (1-45 Hz).
 - **Independent Component Analysis (ICA)**: Disentangles neural signals from noise.
-- **Component Classification:** Automagically distinguishes between artifact and neural components.
+- **Component Classification:** Automatically distinguishes between artifact and neural components.
 
 ### Feature Extraction and Feature Selection
 - Power spectral bands
